@@ -4,30 +4,26 @@ t = Turtle()
 s = Screen()
 s.listen()
 
-def move_up():
-    # set to north
-    t.setheading(90)
-    t.fd(20)
+def move_forward():
+    t.fd(5)
 
-def move_down():
-    # set to south
-    t.setheading(270)
-    t.fd(20)
+def move_backward():
+    t.bk(5)
 
-def move_right():
-    # set to east
-    t.setheading(0)
-    t.fd(20)
+def turn_left():
+    t.lt(5)
 
-def move_left():
-    # set to west
-    t.setheading(180)
-    t.fd(20)
+def turn_right():
+    t.rt(5)
 
-s.onkey(move_up, "Up")
-s.onkey(move_down, "Down")
-s.onkey(move_right, "Right")
-s.onkey(move_left, "Left")
+def reset_screen():
+    t.reset()
+
+s.onkey(move_forward, "Up")
+s.onkey(move_backward, "Down")
+s.onkey(turn_left, "Left")
+s.onkey(turn_right, "Right")
+s.onkey(reset_screen, "c")
 
 
 s.exitonclick()
